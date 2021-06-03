@@ -22,3 +22,4 @@ Route::get('/about', function () {
 });
 Route::resource('category', 'App\Http\Controllers\CategoryController');
 Route::resource('product', 'App\Http\Controllers\ProductController');
+Route::resource('banner', 'App\Http\Controllers\BannerController');
