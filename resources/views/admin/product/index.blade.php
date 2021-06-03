@@ -10,51 +10,52 @@
                     </div>
                 @endif
                 <div class="mb-3">
-                    <h2>All Categories</h2>
-                    <a href="category/create" class="float-right"><button type="submit" class="btn btn-success">Add Category</button></a>
+                    <h2>All Product</h2>
+                    <a href="product/create" class="float-right"><button type="submit" class="btn btn-success">Add Product</button></a>
                 </div>
-                <table class="table table-striped mt-4">
-                    <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @if(is_countable($categories) && count($categories) > 0)
-                        @foreach($categories as $key => $category)
-                            <tr>
-                                <td>{{ $key+1 }}</td>
-                                <td>{{ $category->name }}</td>
-                                <td>{{ $category->description }}</td>
-                                <td>
-                                    <a href="{{ route('category.edit', [$category->id]) }}">
-                                        <button class="btn btn-primary">Edit</button>
-                                    </a>
-                                </td>
-                                <td>
-                                    <form id="delete-form{{$category->id}}" method="post" action="{{ route('category.destroy',[$category->id]) }}">
-                                        @csrf
-                                        @method('delete')
-                                    </form>
-                                    <a href="#" onclick="if(confirm('Do you want to delete?')) {
-                                        event.preventDefault();
-                                        document.getElementById('delete-form{{$category->id}}').submit()
-                                        }else{
-                                        event.preventDefault();
-                                        }"><input type="submit" value="Delete" class="btn btn-danger"></a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    @else
-                        <td>No Category to display</td>
-                    @endif
-                    </tbody>
-                </table>
-                </table>
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @if(count($products) > 0)
+                            @foreach($products as $key => $product)
+                                <tr>
+                                    <th><img src="{{ asset('images') }}/{{ $product->image }}" width="100"></th>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->description }}</td>
+                                    <td>{{ $product->price }} UZS</td>
+                                    <td>{{ $product->category->name }}</td>
+                                    <td>
+                                        <a href="{{ route('product.edit', [$product->id]) }}"><button class="my-1 btn btn-outline-success">edit</button></a>
+                                    </td>
+                                    <td>
+                                        <form id="delete-form{{$product->id}}" method="post" action="{{ route('product.destroy',[$product->id]) }}">
+                                            @csrf
+                                            @method('delete')
+                                        </form>
+                                        <a href="#" onclick="if(confirm('Do you want to delete?')) {
+                                            event.preventDefault();
+                                            document.getElementById('delete-form{{$product->id}}').submit()
+                                            }else{
+                                            event.preventDefault();
+                                            }"><input type="submit" value="Delete" class="btn btn-danger"></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @else
+                            <td>No Product to display</td>
+                        @endif
+                        </tbody>
+                    </table>
             </div>
         </div>
     </div>
