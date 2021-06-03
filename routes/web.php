@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/about', function () {
-    return view('about');
-});
+
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index']);
 Route::resource('category', 'App\Http\Controllers\CategoryController');
 Route::resource('product', 'App\Http\Controllers\ProductController');
 Route::resource('banner', 'App\Http\Controllers\BannerController');
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
