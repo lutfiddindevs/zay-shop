@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index']);
 Route::resource('category', 'App\Http\Controllers\CategoryController');
 Route::resource('product', 'App\Http\Controllers\ProductController');
@@ -27,3 +27,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
