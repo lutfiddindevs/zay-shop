@@ -40,7 +40,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'description' => $request->description
         ]);
-        return redirect()->back()->with('message', 'Category has been added successfully');
+        return redirect('category')->with('message', 'Category has been added successfully');
     }
 
     /**
@@ -93,6 +93,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::where('id', $id)->delete();
+        return redirect('/category')->with('message', 'Category has been deleted successfully');
     }
 }

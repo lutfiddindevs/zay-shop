@@ -11,7 +11,7 @@
                 @endif
                 <div class="mb-3">
                     <h2>All Categories</h2>
-                    <button class="btn btn-success">Add Category</button>
+                    <a href="category/create" class="float-right"><button type="submit" class="btn btn-success">Add Category</button></a>
                </div>
                    <table class="table table-striped mt-4">
                        <thead>
@@ -36,7 +36,16 @@
                                        </a>
                                    </td>
                                    <td>
-                                       <button class="btn btn-danger">Delete</button>
+                                       <form id="delete-form{{$category->id}}" method="post" action="{{ route('category.destroy',[$category->id]) }}">
+                                           @csrf
+                                           @method('delete')
+                                       </form>
+                                       <a href="#" onclick="if(confirm('Do you want to delete?')) {
+                                           event.preventDefault();
+                                           document.getElementById('delete-form{{$category->id}}').submit()
+                                           }else{
+                                           event.preventDefault();
+                                           }"><input type="submit" value="Delete" class="btn btn-danger"></a>
                                    </td>
                                </tr>
                            @endforeach
