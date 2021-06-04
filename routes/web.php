@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index']);
+Route::get('/shop-single', [App\Http\Controllers\ShopController::class, 'buySingle']);
 
 Route::get('/about', function () {
     return view('about');
@@ -25,6 +26,9 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+ Route::resource('user', 'App\Http\Controllers\UserController');
+ Route::resource('cart', 'App\Http\Controllers\CartController');
 
 Auth::routes();
 

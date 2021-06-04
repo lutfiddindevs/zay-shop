@@ -109,7 +109,7 @@
                             @endif
                         @else
                          <li class="nav-item">
-                                <a  class="nav-link" href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a  class="nav-link" href="user/{{ App\Models\User::find(auth()->user()->id) }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 

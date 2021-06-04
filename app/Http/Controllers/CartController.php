@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-class UserController extends Controller
+use App\Models\Product;
+
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::latest()->get();
-        return view('admin.user.index', compact('users'));
+        return view('cart');
     }
 
     /**
@@ -35,7 +35,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::find($id);
     }
 
     /**
@@ -46,8 +46,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        return view('user', compact('user'));
+        //
     }
 
     /**

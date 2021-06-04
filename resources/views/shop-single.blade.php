@@ -27,7 +27,7 @@
 	        <div class="row">
 	            <div class="col-lg-5 mt-5">
 	                <div class="card mb-3">
-	                    <img class="card-img img-fluid" src="assets/img/product_single_10.jpg" alt="Card image cap" id="product-detail">
+	                    <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_10.jpg') }}" alt="Card image cap" id="product-detail">
 	                </div>
 	                <div class="row">
 	                    <!--Start Controls-->
@@ -48,17 +48,17 @@
 	                                <div class="row">
 	                                    <div class="col-4">
 	                                        <a href="#">
-	                                            <img class="card-img img-fluid" src="assets/img/product_single_01.jpg" alt="Product Image 1">
+	                                            <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_01.jpg') }}" alt="Product Image 1">
 	                                        </a>
 	                                    </div>
 	                                    <div class="col-4">
 	                                        <a href="#">
-	                                            <img class="card-img img-fluid" src="assets/img/product_single_02.jpg" alt="Product Image 2">
+	                                            <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_02.jpg') }}" alt="Product Image 2">
 	                                        </a>
 	                                    </div>
 	                                    <div class="col-4">
 	                                        <a href="#">
-	                                            <img class="card-img img-fluid" src="assets/img/product_single_03.jpg" alt="Product Image 3">
+	                                            <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_03.jpg') }}" alt="Product Image 3">
 	                                        </a>
 	                                    </div>
 	                                </div>
@@ -70,17 +70,17 @@
 	                                <div class="row">
 	                                    <div class="col-4">
 	                                        <a href="#">
-	                                            <img class="card-img img-fluid" src="assets/img/product_single_04.jpg" alt="Product Image 4">
+	                                            <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_04.jpg') }}" alt="Product Image 4">
 	                                        </a>
 	                                    </div>
 	                                    <div class="col-4">
 	                                        <a href="#">
-	                                            <img class="card-img img-fluid" src="assets/img/product_single_05.jpg" alt="Product Image 5">
+	                                            <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_05.jpg') }}" alt="Product Image 5">
 	                                        </a>
 	                                    </div>
 	                                    <div class="col-4">
 	                                        <a href="#">
-	                                            <img class="card-img img-fluid" src="assets/img/product_single_06.jpg" alt="Product Image 6">
+	                                            <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_06.jpg') }}" alt="Product Image 6">
 	                                        </a>
 	                                    </div>
 	                                </div>
@@ -92,17 +92,17 @@
 	                                <div class="row">
 	                                    <div class="col-4">
 	                                        <a href="#">
-	                                            <img class="card-img img-fluid" src="assets/img/product_single_07.jpg" alt="Product Image 7">
+	                                            <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_07.jpg') }}" alt="Product Image 7">
 	                                        </a>
 	                                    </div>
 	                                    <div class="col-4">
 	                                        <a href="#">
-	                                            <img class="card-img img-fluid" src="assets/img/product_single_08.jpg" alt="Product Image 8">
+	                                            <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_08.jpg') }}" alt="Product Image 8">
 	                                        </a>
 	                                    </div>
 	                                    <div class="col-4">
 	                                        <a href="#">
-	                                            <img class="card-img img-fluid" src="assets/img/product_single_09.jpg" alt="Product Image 9">
+	                                            <img class="card-img img-fluid" src="{{ asset('assets/img/product_single_09.jpg') }}" alt="Product Image 9">
 	                                        </a>
 	                                    </div>
 	                                </div>
@@ -224,7 +224,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_08.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_08.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -262,7 +262,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_09.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_09.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -300,7 +300,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_10.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_10.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -338,7 +338,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_11.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_11.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -376,7 +376,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_08.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_08.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -414,7 +414,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_09.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_09.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -452,7 +452,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_10.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_10.jpg')  }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -490,7 +490,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_11.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_11.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -528,7 +528,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_08.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_08.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -566,7 +566,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_09.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_09.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -604,7 +604,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_10.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_10.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
@@ -642,7 +642,7 @@
 	            <div class="p-2 pb-3">
 	                <div class="product-wap card rounded-0">
 	                    <div class="card rounded-0">
-	                        <img class="card-img rounded-0 img-fluid" src="assets/img/shop_11.jpg">
+	                        <img class="card-img rounded-0 img-fluid" src="{{ asset('assets/img/shop_11.jpg') }}">
 	                        <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
 	                            <ul class="list-unstyled">
 	                                <li><a class="btn btn-success text-white" href="shop-single.html"><i class="far fa-heart"></i></a></li>
