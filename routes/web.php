@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index']);
-Route::resource('category', 'App\Http\Controllers\CategoryController');
-Route::resource('product', 'App\Http\Controllers\ProductController');
-Route::resource('banner', 'App\Http\Controllers\BannerController');
+
 Route::get('/about', function () {
     return view('about');
 });
@@ -31,3 +29,14 @@ Route::get('/contact', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'isAdmin'], function() {
+    Route::resource('category', 'App\Http\Controllers\CategoryController');
+    Route::resource('product', 'App\Http\Controllers\ProductController');
+    Route::resource('banner', 'App\Http\Controllers\BannerController');
+    Route::get('admin/home', [App\Http\Controllers\AdminController::class, 'index']);
+    Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'showUsers']);
+    Route::get('/admin/user/create', [App\Http\Controllers\AdminController::class, 'addUser']);
+    Route::post('/admin/user/store', [App\Http\Controllers\AdminController::class, 'storeUser']);
+
+});    
