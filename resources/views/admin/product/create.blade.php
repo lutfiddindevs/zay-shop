@@ -30,7 +30,6 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Choose Category</label>
                         <select class="form-select" aria-label="Default select example" name="category">
                             @foreach(App\Models\Category::all() as $category)
-                            <option selected>Choose Category</option>
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>

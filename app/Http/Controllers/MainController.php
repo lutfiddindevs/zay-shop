@@ -9,7 +9,7 @@ use App\Models\Banner;
 class MainController extends Controller
 {
     public function index() {
-        $products = Product::all();
+        $products = Product::limit(3)->get();
         $banners = Banner::all();
         return view('main', compact('products', 'banners'));
     }
