@@ -15,6 +15,11 @@
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">View Users</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="user/create" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Add User</span>
+                        </a>
+                    </li>    
                     <li>
                         <a href="/category" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">View Categories</span> </a>
