@@ -36,11 +36,17 @@
                 <div class="row">
                     <div class="col-md-6 pb-4">
                         <div class="d-flex">
-                            <select class="form-control">
-                                <option>Featured</option>
-                                <option>A to Z</option>
-                                <option>Item</option>
+                            <form action="{{ route('product.sort') }}" method="get">
+                            <select class="form-control" name="sorting">
+                                <option value="newness">Sort by newness</option>
+                                <option value="date">Sort by date</option>
+                                <option value="asc">Sort alphabetically</option>
+                                <option value="desc">Sort alphabetically-desc</option>
+                                <option value="price">Sort by price</option>
+                                <option value="price_desc">Sort price-desc</option>
                             </select>
+                                <button type="submit">Filter</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -85,9 +91,12 @@
                     </div>
                     @endforeach
                 </div>
-                 {{ $products->links('pagination::bootstrap-4') }} 
+                 {{ $products->links('pagination::bootstrap-4') }}
+                 <p>
+                      Displaying {{$products->count()}} of {{ $products->total() }} products
+                 </p>
             </div>
-
+            
         </div>
     </div>
     <!-- End Content -->

@@ -20,6 +20,7 @@ Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
 Route::get('/product/{id}/show', [App\Http\Controllers\MainController::class, 'showProduct']);
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index']);
 Route::get('/shop-single', [App\Http\Controllers\ShopController::class, 'buySingle']);
+Route::get('/product/sort', [App\Http\Controllers\ShopController::class, 'index'])->name('product.sort');
 
 Route::get('/about', function () {
     return view('about');
@@ -28,8 +29,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
- Route::resource('user', 'App\Http\Controllers\UserController');
- Route::resource('cart', 'App\Http\Controllers\CartController');
+ Route::resource('user', 'App\Http\Controllers\UserController')->middleware('auth');
+ Route::resource('cart', 'App\Http\Controllers\CartController')->middleware('auth');
 
 Auth::routes();
 
@@ -44,4 +45,4 @@ Route::group(['middleware' => 'isAdmin'], function() {
     Route::get('/admin/user/create', [App\Http\Controllers\AdminController::class, 'addUser']);
     Route::post('/admin/user/store', [App\Http\Controllers\AdminController::class, 'storeUser']);
 
-});    
+});

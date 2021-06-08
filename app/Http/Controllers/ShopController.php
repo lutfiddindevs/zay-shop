@@ -8,13 +8,30 @@ use App\Models\Product;
 
 class ShopController extends Controller
 {
-    public function index() {
+    public $sorting;
+    public $pagesize;
+    public $products = '';
+
+    public function index(Request $req) {
         $categories = Category::all();
+
+        
+        // if ($this->sorting == $req->newness) {
+        //     $products = Product::orderBy('created_at', 'DESC')->paginate($this->pagesize);
+
+        // } else if($this->sorting == $req->price) {
+        //     $products = Product::orderBy('price', 'ASC')->paginate($this->pagesize);
+        // } else if($this->sorting == $req->price_desc) {
+        //     $products = Product::orderBy('price', 'DESC')->paginate($this->pagesize);
+        // } else {
+        //     $products = Product::paginate($this->pagesize);
+        // }
         $products = Product::latest()->paginate(6);
         return view('shop', compact('categories', 'products'));
     }
 
     public function buySingle() {
-        return view('shop-single');
+        $products = Product::inRandomOrder()->limit(6)->get();
+        return view('shop-single', compact('products'));
     }
 }

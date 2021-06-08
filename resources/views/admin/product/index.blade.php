@@ -16,6 +16,7 @@
                     <table class="table table-striped">
                         <thead class="thead-dark">
                         <tr>
+                            <th scope="col">#</th>
                             <th scope="col">Image</th>
                             <th scope="col">Name</th>
                             <th scope="col">Description</th>
@@ -29,6 +30,7 @@
                         @if(count($products) > 0)
                             @foreach($products as $key => $product)
                                 <tr>
+                                    <td>{{ ++$key }}</td>
                                     <th><img src="{{ asset('images') }}/{{ $product->image }}" width="100"></th>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->description }}</td>

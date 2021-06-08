@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\Cart;
+use Auth;
 
 class CartController extends Controller
 {
@@ -14,7 +15,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('cart');
+        $cart_items = Cart::where('user_id', auth()->user()->id)->get();
+        return view('cart', compact('cart_items'));
     }
 
     /**
