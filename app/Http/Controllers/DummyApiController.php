@@ -22,7 +22,22 @@ class DummyApiController extends Controller
         if ($result) {
             return ["Result" => "Data has been saved"];
         } else {
-        return ['Result' => 'Operation failed'];
+        return ['Result' => "Operation failed to save"];
+        } 
+    }
+
+    public function updateProduct(Request $req) {
+        $product = Product::find($req->id);
+        $product->name = $req->name;
+        $product->description = $req->description;
+        $product->price = $req->price;
+        $product->category_id = $req->category_id;
+        $product->image = $req->image;
+        $result = $product->save();
+        if ($result) {
+            return ["Result" => "Data has been updated"];
+        } else {
+        return ['Result' => 'Operation failed to update'];
         } 
     }
 }
