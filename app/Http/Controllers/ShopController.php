@@ -10,7 +10,6 @@ class ShopController extends Controller
 {
     public $sorting;
     public $pagesize;
-    public $products = '';
 
     public function index(Request $req) {
         $categories = Category::all();
@@ -33,5 +32,11 @@ class ShopController extends Controller
     public function buySingle() {
         $products = Product::inRandomOrder()->limit(6)->get();
         return view('shop-single', compact('products'));
+    }
+
+    public function indexSorting() {
+        $products = Product::sortable()->paginate(6);
+
+        return view('index-sorting')->with('products', $products);
     }
 }

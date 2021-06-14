@@ -35,6 +35,24 @@ class AdminController extends Controller
             'password' => Hash::make($req->password),
             'address' => $req->address
         ]);
-        return redirect('admin/users')->with('message', 'User has been created successfully!');
+        return redirect('')->with('message', 'User has been created successfully!');
+    }
+
+    public function editUser($id) {
+         $user = User::find($id);
+        return view('admin.user.edit', compact('user'));
+    }
+
+    public function updateUser($id) {
+        $user = User::where('id', $id)
+            ->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' =>  Hash::make($req->password),
+                'visible_password' => $request->password,
+                'address' => $request->address
+            ]);
+        session()->flash('message', 'User has been updated successfully');
+        return redirect('/admin/users');
     }
 }

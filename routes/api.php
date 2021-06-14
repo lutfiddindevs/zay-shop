@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DummyApiController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('products', [DummyApiController::class, 'listProducts']);
+Route::post('products/add', [DummyApiController::class, 'addProduct']);
+Route::put('products/update', [DummyApiController::class, 'updateProduct']);

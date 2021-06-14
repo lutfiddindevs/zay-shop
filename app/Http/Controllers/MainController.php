@@ -25,4 +25,10 @@ class MainController extends Controller
         $data = Product::where('name', 'like', '%' . $req->input('search') . '%')->get();
     	return view('search', compact('data'));
     }
+
+    public function showSingleCategory($id) {
+        $category = Category::find($id);
+        return view('show-single-category', compact("category"));
+    }
+
 }

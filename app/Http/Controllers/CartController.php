@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use Auth;
+use Session;
 
 class CartController extends Controller
 {
@@ -35,9 +37,17 @@ class CartController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        $product = Product::find($id);
+        if ($req->session()->has('user')) {
+    		$cart = new Cart;
+    		$cart->user_id = $req->session()->get('user')['id'];
+    		$cart->product_id = $req->product_id;
+    		$cart->save();
+    		return redirect()->back()->with('message', 'Product has been added to cart successfully');
+    	} else {
+            return redirect('/login');
+        }
     }
 
     /**

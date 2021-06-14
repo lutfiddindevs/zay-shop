@@ -25,6 +25,11 @@ class Product extends Model
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
 
+    public $sortable = ['name',
+                        'price',
+                        'category_id',
+                        'created_at'];
+
      public function cart()
     {
         return $this->belongsTo(Cart::class);

@@ -27,7 +27,7 @@
                 <h1 class="h2 pb-4">Categories</h1>
                     @foreach($categories as $category)
                     <ul class="list-group">
-                        <a href=""><li class="list-group-item list-group-item-primary">{{ $category->name }}</li></a>
+                        <a href="category/{ $category->id }}/show"><li class="list-group-item list-group-item-primary">{{ $category->name }}</li></a>
                     </ul>
                     @endforeach
             </div>

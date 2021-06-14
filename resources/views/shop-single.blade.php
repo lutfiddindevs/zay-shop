@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-	
+
 	<!-- Modal -->
 	<div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	    <div class="modal-dialog modal-lg" role="document">
@@ -167,7 +167,7 @@
 	                            <li>Excepteur sint</li>
 	                        </ul>
 
-	                        <form action="" method="GET">
+	                        <form action="{{ route('cart.store')  }}" method="post">
 	                            <input type="hidden" name="product-title" value="Activewear">
 	                            <div class="row">
 	                                <div class="col-auto">
@@ -175,17 +175,17 @@
 	                                        <li class="list-inline-item">Size :
 	                                            <input type="hidden" name="product-size" id="product-size" value="S">
 	                                        </li>
-	                                        <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
-	                                        <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
-	                                        <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
-	                                        <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
+	                                        <li>
+                                                Category:
+
+                                            </li>
 	                                    </ul>
 	                                </div>
 	                                <div class="col-auto">
 	                                    <ul class="list-inline pb-3">
 	                                        <li class="list-inline-item text-right">
 	                                            Quantity
-	                                            <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+	                                            <input type="hidden" name="quantity" id="product-quanity" value="1">
 	                                        </li>
 	                                        <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
 	                                        <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
@@ -198,7 +198,7 @@
 	                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
 	                                </div>
 	                                <div class="col d-grid">
-	                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                        <a href="{{ route('cart.create') }}"><button type="submit" class="btn btn-success btn-lg">Add To Cart</button></a>
 	                                </div>
 	                            </div>
 	                        </form>

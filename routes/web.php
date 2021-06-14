@@ -18,9 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\MainController::class, 'index']);
 Route::get('/product/{id}/show', [App\Http\Controllers\MainController::class, 'showProduct']);
+Route::get('/category/{id}/show', [App\Http\Controllers\MainController::class, 'showCategories']);
+Route::get('{id}/single-category', [App\Http\Controllers\MainController::class, 'showSingleCategory']);
+Route::get('/search', [App\Http\Controllers\MainController::class, 'search']);
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index']);
 Route::get('/shop-single', [App\Http\Controllers\ShopController::class, 'buySingle']);
 Route::get('/product/sort', [App\Http\Controllers\ShopController::class, 'index'])->name('product.sort');
+
+Route::get('products/index-paging', [App\Http\Controllers\ShopController::class, 'indexPaging']);
 
 Route::get('/about', function () {
     return view('about');
@@ -31,6 +36,7 @@ Route::get('/contact', function () {
 
  Route::resource('user', 'App\Http\Controllers\UserController')->middleware('auth');
  Route::resource('cart', 'App\Http\Controllers\CartController')->middleware('auth');
+
 
 Auth::routes();
 
@@ -44,5 +50,7 @@ Route::group(['middleware' => 'isAdmin'], function() {
     Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'showUsers']);
     Route::get('/admin/user/create', [App\Http\Controllers\AdminController::class, 'addUser']);
     Route::post('/admin/user/store', [App\Http\Controllers\AdminController::class, 'storeUser']);
+    Route::get('/admin/user/{id}/edit', [App\Http\Controllers\AdminController::class, 'editUser']);
+    Route::post('/admin/user/{id}/update', [App\Http\Controllers\AdminController::class, 'updateUser']);
 
 });

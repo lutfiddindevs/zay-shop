@@ -58,6 +58,7 @@
                             <h3 class="text-center">All Users</h3>
                         </div>
                         <div class="module-body">
+                            <a href="user/create"><button class="btn btn-success">Add User</button></a>
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -83,7 +84,7 @@
                                         <td>{{ $user->visible_password }}</td>
                                         <td>{{ $user->address }}</td>
                                         <td>
-                                            <a href="">
+                                            <a href="/admin/user/{{$user->id}}/edit">
                                                 <button class="btn btn-primary">Edit</button>
                                             </a>
                                         </td>
